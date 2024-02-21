@@ -1,4 +1,4 @@
-/* CONTRIBUTE TO THIS WEBSITE ON OUR GITHUB https://github.com/homebrewfrance/homebrewfrance.github.io */
+/* CONTRIBUTE TO THIS SCRIPT ON OUR GITHUB https://github.com/homebrewfrance/Lumia-Multi-Checker */
 /* LAST-EDITED : 21/02/2023 by Dhalian */
 
 const form = document.querySelector('form');
