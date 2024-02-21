@@ -12,6 +12,7 @@ The script get the user entry and will tell about the compatibility.
 The Multi-Checker is located at :
 - Nintendo Switch : https://homebrewfrance.github.io/multi-checker/switch
 - PlayStation 3 : https://homebrewfrance.github.io/multi-checker/ps3
+  
 It's actually integrated in our website.
 
 # Credits 
