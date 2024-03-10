@@ -12,21 +12,31 @@ form.addEventListener('submit', (e) => {
     compatible = '<div class="compatible-container"><div class="compatible">&nbsp;<strong>Comptatible CFW</strong></div><div class="infos"><p>Votre console est compatible avec un CFW permanent.</p></div></div>';
     incompatible = '<div class="incompatible-container"><div class="incompatible">&nbsp;<strong>Console patchée</strong></div><div class="infos"><p>Votre console est incompatible avec un CFW permanent. Préféreez l’installation du HEN (Hybrid Firmware)</p></div></div>';
 
-    if (numberInputPS3.length < 7) {
-        alert("Numéro de modèle invalide.");
-        return;
-    }
-
     if ((CECHSelector === "CECH-20" || CECHSelector === "CECH-21" || CECHSelector === "CECH-25") && (LETTERSelector === "A" || LETTERSelector === "B" || LETTERSelector === "C" || LETTERSelector === "D")) {
-        resultat.innerHTML = compatible;
+        if (numberInputPS3.length < 4) {
+             alert("Numéro de modèle invalide.");
+        return;
+        }
+        else {
+            resultat.innerHTML = compatible;
+        }
 
     } else if ((CECHSelector === "CECH-30" || CECHSelector === "CECH-40" || CECHSelector === "CECH-42" || CECHSelector === "CECH-43") && (LETTERSelector === "A" || LETTERSelector === "B" || LETTERSelector === "C" || LETTERSelector === "D")) {
-        resultat.innerHTML = incompatible;
+        if (numberInputPS3.length < 4) {
+             alert("Numéro de modèle invalide.");
+        return;
+        }
+        else {
+            resultat.innerHTML = incompatible;
+        }
 
     } else if (["CECHA", "CECHB", "CECHC", "CECHE", "CECHF", "CECHG", "CECHH", "CECHJ", "CECHK", "CECHL", "CECHM", "CECHP", "CECHQ"].includes(CECHSelector)) {
-        resultat.innerHTML = compatible;
-
-    } else {
-        alert("Numéro de modèle invalide ou non pris en charge.");
+        if (numberInputPS3.length < 7) {
+             alert("Numéro de modèle invalide.");
+        return;
+        }
+        else {
+            resultat.innerHTML = compatible;
+        }
     }
 });
