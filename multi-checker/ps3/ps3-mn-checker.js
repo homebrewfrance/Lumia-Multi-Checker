@@ -13,7 +13,8 @@ form.addEventListener('submit', (e) => {
     incompatible = '<div class="incompatible-container"><div class="incompatible">&nbsp;<strong>Console patchée</strong></div><div class="infos"><p>Votre console est incompatible avec un CFW permanent. Préféreez l’installation du HEN (Hybrid Firmware)</p></div></div>';
 
     if ((CECHSelector === "CECH-20" || CECHSelector === "CECH-21" || CECHSelector === "CECH-25") && (LETTERSelector === "A" || LETTERSelector === "B" || LETTERSelector === "C" || LETTERSelector === "D")) {
-        if (numberInputPS3.length < 2) {
+        document.getElementsByClassName("inputPS3").placeholder = "01";
+        if (numberInputPS3.length != 2) {
              alert("Numéro de modèle invalide.");
         return;
         }
@@ -22,7 +23,8 @@ form.addEventListener('submit', (e) => {
         }
 
     } else if ((CECHSelector === "CECH-30" || CECHSelector === "CECH-40" || CECHSelector === "CECH-42" || CECHSelector === "CECH-43") && (LETTERSelector === "A" || LETTERSelector === "B" || LETTERSelector === "C" || LETTERSelector === "D")) {
-        if (numberInputPS3.length < 2) {
+        document.getElementsByClassName("inputPS3").placeholder = "01";
+        if (numberInputPS3.length != 2) {
              alert("Numéro de modèle invalide.");
         return;
         }
@@ -31,7 +33,7 @@ form.addEventListener('submit', (e) => {
         }
 
     } else if (["CECHA", "CECHB", "CECHC", "CECHE", "CECHF", "CECHG", "CECHH", "CECHJ", "CECHK", "CECHL", "CECHM", "CECHP", "CECHQ"].includes(CECHSelector)) {
-        if (numberInputPS3.length < 7) {
+        if (numberInputPS3.length != 7) {
              alert("Numéro de modèle invalide.");
         return;
         }
