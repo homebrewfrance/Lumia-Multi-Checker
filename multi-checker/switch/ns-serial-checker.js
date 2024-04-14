@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
             var container = document.createElement('div');
             container.className = 'maybe-compatible-container';
             var divMaybeCompatible = document.createElement('div');
-            divCompatible.className = 'maybe-compatible';
-            divCompatible.innerHTML = '&nbsp;<strong>Console potentiellement patchée</strong>';
-            container.appendChild(divCompatible);
+            divMaybeCompatible.className = 'maybe-compatible';
+            divMaybeCompatible.innerHTML = '&nbsp;<strong>Console potentiellement patchée</strong>';
+            container.appendChild(divMaybeCompatible);
             var infos = document.createElement('div');
             infos.className = 'infos';
             infos.innerHTML = '<p>Votre console est supposée compatible avec la faille RCM.</br>Votre console nécessite l’installation d’une puce.</br><a href="https://homebrew-france.fr/boutique">Plus d’infos</a></p>';
@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
             resultat.innerHTML = '';
             var container = document.createElement('div');
             container.className = 'incompatible-container';
-            var divMaybeCompatible = document.createElement('div');
-            divCompatible.className = 'incompatible';
-            divCompatible.innerHTML = '&nbsp;<strong>Console patchée</strong>';
-            container.appendChild(divCompatible);
+            var divIncompatible = document.createElement('div');
+            divIncompatible.className = 'incompatible';
+            divIncompatible.innerHTML = '&nbsp;<strong>Console patchée</strong>';
+            container.appendChild(divIncompatible);
             var infos = document.createElement('div');
             infos.className = 'infos';
             infos.innerHTML = '<p>Votre console est incompatible avec la faille RCM.</br>Votre console nécessite l’installation d’une puce.</br><a href="https://homebrew-france.fr/boutique">Plus d’infos</a></p>';
