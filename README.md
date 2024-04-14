@@ -14,8 +14,8 @@ The script get the user entry and will tell about the compatibility.
 
 ## Try the Multi-Checker
 The Multi-Checker is located at :
-- Nintendo Switch : https://homebrewfrance.github.io/multi-checker/switch
-- PlayStation 3 : https://homebrewfrance.github.io/multi-checker/ps3
+- Nintendo Switch : https://homebrew-france.fr/multi-checker/switch
+- PlayStation 3 : https://homebrew-france.fr/multi-checker/ps3
   
 It's actually integrated in our website.
 
