@@ -1,6 +1,3 @@
-/* CONTRIBUTE TO THIS SCRIPT ON OUR GITHUB https://github.com/homebrewfrance/Lumia-Multi-Checker */
-/* LAST-EDITED : 10/03/2024 by Dhalian */
-
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -9,8 +6,36 @@ form.addEventListener('submit', (e) => {
     const LETTERSelector = document.querySelector('select[name="LETTERSelector"]').value;
     var resultat = document.getElementById("resultat");
 
-    compatible = '<div class="compatible-container"><div class="compatible">&nbsp;<strong>Comptatible CFW</strong></div><div class="infos"><p>Votre console est compatible avec un CFW permanent.</p></div></div>';
-    incompatible = '<div class="incompatible-container"><div class="incompatible">&nbsp;<strong>Console patchée</strong></div><div class="infos"><p>Votre console est incompatible avec un CFW permanent. Préféreez l’installation du HEN (Hybrid Firmware)</p></div></div>';
+    function compatible() {
+        resultat.innerHTML = '';
+        var container = document.createElement('div');
+        container.className = 'compatible-container';
+        var divCompatible = document.createElement('div');
+        divCompatible.className = 'compatible';
+        divCompatible.innerHTML = '&nbsp;<strong>Compatible CFW</strong>';
+        container.appendChild(divCompatible);
+        var infos = document.createElement('div');
+        infos.className = 'infos';
+        infos.innerHTML = '<p>Votre console est compatible avec un CFW permanent.</p>';
+        container.appendChild(infos);
+        resultat.appendChild(container);
+    }
+
+    function incompatible() {
+        resultat.innerHTML = '';
+        var container = document.createElement('div');
+        container.className = 'incompatible-container';
+        var divIncompatible = document.createElement('div');
+        divIncompatible.className = 'incompatible';
+        divIncompatible.innerHTML = '&nbsp;<strong>Incompatible CFW</strong>';
+        container.appendChild(divIncompatible);
+        var infos = document.createElement('div');
+        infos.className = 'infos';
+        infos.innerHTML = '<p>Votre console est incompatible avec un CFW permanent. Préféreez l’installation du HEN (Hybrid Firmware)</p>';
+        container.appendChild(infos);
+        resultat.appendChild(container);
+    }
+
 
     if ((CECHSelector === "CECH-20" || CECHSelector === "CECH-21" || CECHSelector === "CECH-25") && (LETTERSelector === "A" || LETTERSelector === "B" || LETTERSelector === "C" || LETTERSelector === "D")) {
         document.getElementsByClassName("inputPS3").placeholder = "01";
@@ -19,7 +44,7 @@ form.addEventListener('submit', (e) => {
         return;
         }
         else {
-            resultat.innerHTML = compatible;
+            compatible();
         }
 
     } else if ((CECHSelector === "CECH-30" || CECHSelector === "CECH-40" || CECHSelector === "CECH-42" || CECHSelector === "CECH-43") && (LETTERSelector === "A" || LETTERSelector === "B" || LETTERSelector === "C" || LETTERSelector === "D")) {
@@ -29,7 +54,7 @@ form.addEventListener('submit', (e) => {
         return;
         }
         else {
-            resultat.innerHTML = incompatible;
+            incompatible();
         }
 
     } else if (["CECHA", "CECHB", "CECHC", "CECHE", "CECHF", "CECHG", "CECHH", "CECHJ", "CECHK", "CECHL", "CECHM", "CECHP", "CECHQ"].includes(CECHSelector)) {
@@ -38,7 +63,7 @@ form.addEventListener('submit', (e) => {
         return;
         }
         else {
-            resultat.innerHTML = compatible;
+            compatible();
         }
     }
 });
