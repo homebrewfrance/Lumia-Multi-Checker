@@ -7,68 +7,103 @@ document.addEventListener('DOMContentLoaded', function () {
         const resultat = document.getElementById("resultat");
         const pageName = document.querySelector('body').getAttribute('page_name');
 
-        let compatible, maybecompatible, incompatible;
-
-        if (pageName === 'docs') {
-            compatible = '<div class="compatible-container"><div class="compatible">&nbsp;<strong>Console non patchée</strong></div><div class="infos"><p>Votre console est compatible avec la faille RCM.</br>Vous pouvez continuer à <a href="https://homebrew-france.fr/docs/switch/#simuler-jig">l’étape suivante</a>.</p></div></div>';
-        } else {
-            compatible = '<div class="compatible-container"><div class="compatible">&nbsp;<strong>Console non patchée</strong></div><div class="infos"><p>Votre console est compatible avec la faille RCM.</p></div></div>';
+        function compatible() {
+            resultat.innerHTML = '';
+            var container = document.createElement('div');
+            container.className = 'compatible-container';
+            var divCompatible = document.createElement('div');
+            divCompatible.className = 'compatible';
+            divCompatible.innerHTML = '&nbsp;<strong>Console non patchée</strong>';
+            container.appendChild(divCompatible);
+            var infos = document.createElement('div');
+            infos.className = 'infos';
+            if (pageName === 'docs') { 
+                infos.innerHTML = '<p>Votre console est compatible avec la faille RCM.</br>Vous pouvez continuer à <a href="https://docs.homebrew-france.fr/switch/#simuler-jig">l’étape suivante</a>.</p>';
+            }
+            else {
+                infos.innerHTML = '<p>Votre console est compatible avec la faille RCM.</p>';
+            }
+            container.appendChild(infos);
+            resultat.appendChild(container);
         }
-        maybecompatible = '<div class="maybe-compatible-container"><div class="maybe-compatible">&nbsp;<strong>Console potentiellement patchée</strong></div><div class="infos"><p>Votre console est supposée compatible avec la faille RCM.</br>Votre console nécessite l’installation d’une puce.</br><a href="https://homebrew-france.fr/boutique">Plus d’infos</a></p></div></div>';
-        incompatible = '<div class="incompatible-container"><div class="incompatible">&nbsp;<strong>Console patchée</strong></div><div class="infos"><p>Votre console est incompatible avec la faille RCM.</br>Votre console nécessite l’installation d’une puce.</br><a href="https://homebrew-france.fr/boutique">Plus d’infos</a></p></div></div>';
 
-        if (numberInput.length !== 11) {
-            alert("Numéro de série invalide, il doit comporter exactement 11 caractères.");
-            return;
+        function maybeCompatible() {
+            resultat.innerHTML = '';
+            var container = document.createElement('div');
+            container.className = 'maybe-compatible-container';
+            var divMaybeCompatible = document.createElement('div');
+            divCompatible.className = 'maybe-compatible';
+            divCompatible.innerHTML = '&nbsp;<strong>Console potentiellement patchée</strong>';
+            container.appendChild(divCompatible);
+            var infos = document.createElement('div');
+            infos.className = 'infos';
+            infos.innerHTML = '<p>Votre console est supposée compatible avec la faille RCM.</br>Votre console nécessite l’installation d’une puce.</br><a href="https://homebrew-france.fr/boutique">Plus d’infos</a></p>';
+            container.appendChild(infos);
+            resultat.appendChild(container);
+        }
+
+        function incompatible() {
+            resultat.innerHTML = '';
+            var container = document.createElement('div');
+            container.className = 'incompatible-container';
+            var divMaybeCompatible = document.createElement('div');
+            divCompatible.className = 'incompatible';
+            divCompatible.innerHTML = '&nbsp;<strong>Console patchée</strong>';
+            container.appendChild(divCompatible);
+            var infos = document.createElement('div');
+            infos.className = 'infos';
+            infos.innerHTML = '<p>Votre console est incompatible avec la faille RCM.</br>Votre console nécessite l’installation d’une puce.</br><a href="https://homebrew-france.fr/boutique">Plus d’infos</a></p>';
+            container.appendChild(infos);
+            resultat.appendChild(container);
         }
 
         if (xawSelector === "XAW") {
             if (numberInput >= 10000000000 && numberInput <= 10074000000) {
-                resultat.innerHTML = compatible;
+                compatible();
             } else if (numberInput > 10074000000 && numberInput <= 10120000000) {
-                resultat.innerHTML = maybecompatible;
+                maybeCompatible();
             } else if (numberInput > 10120000000 && numberInput <= 40000000000) {
-                resultat.innerHTML = incompatible;
+                incompatible();
             } else if (numberInput >= 40000000000 && numberInput <= 40011000000) {
-                resultat.innerHTML = compatible;
+                compatible();
             } else if (numberInput > 40011000000 && numberInput <= 40012000000) {
-                resultat.innerHTML = maybecompatible;
+                maybeCompatible();
             } else if (numberInput > 40012000000 && numberInput <= 70000000000) {
-                resultat.innerHTML = incompatible;
+                incompatible();
             } else if (numberInput >= 70000000000 && numberInput <= 70017800000) {
-                resultat.innerHTML = compatible;
+                compatible();
             } else if (numberInput > 70017800000 && numberInput <= 70030000000) {
-                resultat.innerHTML = maybecompatible;
+                maybeCompatible();
             } else if (numberInput > 70030000000 && numberInput <= 99999999999) {
-                resultat.innerHTML = incompatible;
+                incompatible();
             } else {
                 alert("Numéro de série invalide");
             }
         } else if (xawSelector === "XAJ") {
             if (numberInput >= 10000000000 && numberInput <= 10020000000) {
-                resultat.innerHTML = compatible;
+                compatible();
             } else if (numberInput > 10020000000 && numberInput <= 10030000000) {
-                resultat.innerHTML = maybecompatible;
+                maybeCompatible();
             } else if (numberInput > 10030000000 && numberInput <= 40000000000) {
-                resultat.innerHTML = incompatible;
+                incompatible();
             } else if (numberInput >= 40000000000 && numberInput <= 40046000000) {
-                resultat.innerHTML = compatible;
+                compatible();
             } else if (numberInput > 40046000000 && numberInput <= 40060000000) {
-                resultat.innerHTML = maybecompatible;
+                maybeCompatible();
             } else if (numberInput > 40060000000 && numberInput <= 70000000000) {
-                resultat.innerHTML = incompatible;
+                incompatible();
             } else if (numberInput >= 70000000000 && numberInput <= 70040000000) {
-                resultat.innerHTML = compatible;
+                compatible();
             } else if (numberInput > 70040000000 && numberInput <= 70050000000) {
-                resultat.innerHTML = maybecompatible;
+                maybeCompatible();
             } else if (numberInput > 70050000000 && numberInput <= 99999999999) {
-                resultat.innerHTML = incompatible;
+                incompatible();
             } else {
                 alert("Numéro de série invalide");
             }
         } else if (["XKJ", "XJW", "XKW", "XWW"].includes(xawSelector)) {
             if (numberInput >= 10000000000) {
-                resultat.innerHTML = incompatible;
+                incompatible();
             }
         } else {
             alert("Numéro de série invalide");
