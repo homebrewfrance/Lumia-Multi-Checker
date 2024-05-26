@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const xawSelector = document.querySelector('select[name="xawSelector"]').value;
         const resultat = document.getElementById("resultat");
         const pageName = document.querySelector('body').getAttribute('page_name');
-        resultat.innerHTML = 'Lumia Multi-Checker v0.3";
 
         function compatible() {
             resultat.innerHTML = '';
@@ -110,4 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Numéro de série invalide");
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('resultat').innerHTML = "Lumia Multi-Checker v0.3";
 });
