@@ -66,4 +66,9 @@ form.addEventListener('submit', (e) => {
             compatible();
         }
     }
+
+
+});    
+document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('resultat').innerHTML = "Lumia Multi-Checker v0.3";
 });
