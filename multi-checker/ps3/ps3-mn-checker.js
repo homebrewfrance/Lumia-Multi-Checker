@@ -70,5 +70,9 @@ form.addEventListener('submit', (e) => {
 });    
 document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('resultat').innerHTML = "Lumia Multi-Checker v0.3";
-        numberInputPS3.setAttribute('placeholder', '0000001');
+        if (["CECHA", "CECHB", "CECHC", "CECHE", "CECHF", "CECHG", "CECHH", "CECHJ", "CECHK", "CECHL", "CECHM", "CECHP", "CECHQ"].includes(CECHSelector)) {
+            numberInputPS3.placeholder = '0000001';
+        else {
+            numberInputPS3.placeholder = '01';
+        }
 });
