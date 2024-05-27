@@ -1,10 +1,18 @@
 const form = document.querySelector('form');
+const numberInputPS3 = document.querySelector('input[name="numberInputPS3"]').value;
+const CECHSelector = document.querySelector('select[name="CECHSelector"]').value;
+const LETTERSelector = document.querySelector('select[name="LETTERSelector"]').value;
+var resultat = document.getElementById("resultat");
+
+if (["CECHA", "CECHB", "CECHC", "CECHE", "CECHF", "CECHG", "CECHH", "CECHJ", "CECHK", "CECHL", "CECHM", "CECHP", "CECHQ"].includes(CECHSelector)) { 
+    numberInputPS3.setAttribute('placeholder', '0000001');
+}
+else {
+    numberInputPS3.setAttribute('placeholder', '01');
+}
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const numberInputPS3 = document.querySelector('input[name="numberInputPS3"]').value;
-    const CECHSelector = document.querySelector('select[name="CECHSelector"]').value;
-    const LETTERSelector = document.querySelector('select[name="LETTERSelector"]').value;
-    var resultat = document.getElementById("resultat");
 
     function compatible() {
         resultat.innerHTML = '';
