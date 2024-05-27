@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Récupérer les valeurs à l'intérieur de l'événement submit
         const numberValue = numberInputPS3.value;
         const cechValue = CECHSelector.value;
         const letterValue = LETTERSelector.value;
