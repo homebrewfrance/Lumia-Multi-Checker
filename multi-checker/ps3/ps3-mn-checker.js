@@ -4,13 +4,6 @@ const CECHSelector = document.querySelector('select[name="CECHSelector"]').value
 const LETTERSelector = document.querySelector('select[name="LETTERSelector"]').value;
 var resultat = document.getElementById("resultat");
 
-if (["CECHA", "CECHB", "CECHC", "CECHE", "CECHF", "CECHG", "CECHH", "CECHJ", "CECHK", "CECHL", "CECHM", "CECHP", "CECHQ"].includes(CECHSelector)) { 
-    numberInputPS3.setAttribute('placeholder', '0000001');
-}
-else {
-    numberInputPS3.setAttribute('placeholder', '01');
-}
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -74,9 +67,14 @@ form.addEventListener('submit', (e) => {
             compatible();
         }
     }
-
-
 });    
 document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('resultat').innerHTML = "Lumia Multi-Checker v0.3";
+        
+        if (["CECHA", "CECHB", "CECHC", "CECHE", "CECHF", "CECHG", "CECHH", "CECHJ", "CECHK", "CECHL", "CECHM", "CECHP", "CECHQ"].includes(CECHSelector)) { 
+            numberInputPS3.setAttribute('placeholder', '0000001');
+        }
+        else {
+            numberInputPS3.setAttribute('placeholder', '01');
+        }
 });
