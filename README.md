@@ -1,6 +1,6 @@
 [![Discord](https://img.shields.io/discord/883623179979984896?logo=discord&label=Le%20Homebrew%20France)](https://discord.gg/le-homebrew-france-883623179979984896) ![GitHub Repo stars](https://img.shields.io/github/stars/homebrewfrance/Lumia-Multi-Checker)
 
-![Lumia-Checker](https://homebrewfrance.github.io/IMAGES/lumia-multi-checker.png)
+![Lumia-Checker](https://cdn.homebrew-france.site/github/lumia-multi-checker.png)
 
 # Le Homebrew France - Lumia-Multi-Checker
 A simple JS based Nintendo Switch Serial checker and PS3 Model Number checker
