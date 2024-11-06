@@ -2,7 +2,7 @@
 
 ![Lumia-Checker](https://cdn.homebrew-france.site/github/lumia-multi-checker.png)
 
-# Le Homebrew France - Lumia-Multi-Checker
+# Homebrew France - Lumia-Multi-Checker
 A simple JS based Nintendo Switch Serial checker and PS3 Model Number checker
 
 ## Presentation 
